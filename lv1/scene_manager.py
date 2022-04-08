@@ -42,7 +42,6 @@ class SceneManager:
 			self._main_character._x += dx
 			self._main_character._y += dy
 			# write log
-			self._logger.clean_log()
 			self._logger.add_log("Move (" + str(dx) + ", " + str(dy) + ")")
 
 	def _check_valid_pos(self, x, y):
