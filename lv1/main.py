@@ -34,7 +34,7 @@ class KBManager:
         cached_key_states = {}
         dcached_key_states = {}
         self._last_key_time = {}
-        self._double_key_tolerance = 1.0
+        self._double_key_tolerance = 0.5
 
     def clean_key_states(self):
         global key_states
