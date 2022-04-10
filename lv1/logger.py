@@ -4,6 +4,7 @@ class Logger:
 	def __init__(self):
 		self._logs = []
 		self._logs_max_size = 5
+		self._logs_cur_size = 0
 		self._last_log_added_time = datetime.datetime.now()
 		self._log_duration = 0.5
 	def print_all_logs(self):
@@ -18,4 +19,8 @@ class Logger:
 			print(log)
 	def add_log(self, log : str):
 		self._last_log_added_time = datetime.datetime.now()
+		self._logs_cur_size += 1
+		if self._logs_cur_size > self._logs_max_size:
+			self._logs.pop(0)
+			self._logs_cur_size -= 1
 		self._logs.append(log)
